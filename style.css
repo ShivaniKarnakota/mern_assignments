@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #1e1e1e;
+  color: #c1cde9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: white;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.github-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #c1cde9;
+  border-radius: 50%;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text p {
+  font-size: 18px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #c1cde9;
+  margin: 10px 0;
+}
+
+.contact-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.hero-img {
+  width: 300px;
+  height: 400px;
+  background: url('https://via.placeholder.com/300x400') no-repeat center/cover;
+  border-radius: 30px;
+}
+
+.about {
+  margin-top: 60px;
+}
+
+.about h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #c1cde9;
+  margin-bottom: 10px;
+  text-transform: lowercase;
+}
+
+.about hr {
+  border: none;
+  height: 2px;
+  background-color: #c1cde9;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 800px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.skills {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.skill-box {
+  background-color: #2d2d2d;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+.skill-box h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.skill-box p {
+  color: #c1cde9;
+  font-size: 14px;
+}
+.work {
+  padding: 60px 20px;
+  background-color: #f9f9f9; /* Light grey background to separate it visually */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.work h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.work hr {
+  width: 50px;
+  height: 3px;
+  background-color: #000;
+  border: none;
+  margin: 10px auto 30px auto;
+}
+
+.work p {
+  font-size: 16px;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.github-icon a {
+  color: #000;
+  font-size: 24px;
+  margin-left: 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.github-icon a:hover {
+  color: #555;
+}
+#contact {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+#contact a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
