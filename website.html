@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Agentblazer Club</title>
+
+    <!-- Google Fonts for Caveat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basic Global Styles for a simple design */
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Centered Logos */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .club-logo-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .club-logo {
+            height: 150px; /* Large size for the club logo */
+        }
+        
+        .club-text {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            margin-left: 10px;
+            color: #63b3ed;
+        }
+
+        .college-logo {
+            height: 80px; /* Smaller size for the college logo */
+        }
+        
+        /* Mission & Vision Outcomes Styles */
+        .outcomes-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .outcome-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Added for smooth animation */
+        }
+        
+        .outcome-box:hover {
+            transform: translateY(-5px); /* Lifts the box up on hover */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Deeper shadow on hover */
+            background-color: #e6f2ff; /* New background color on hover */
+        }
+        
+        .outcome-box h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            text-align: center;
+            color: #63b3ed;
+        }
+
+        /* Team Section Styles */
+        .team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .member-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for smooth animation */
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px); /* Lifts the box up on hover */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Deeper shadow on hover */
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .member-name {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .member-title {
+            font-style: italic;
+            color: #777;
+        }
+
+        /* Events Section Styles */
+        .events-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .event-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background-color: #e6f2ff;
+        }
+
+        .event-date {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        
+        .event-title {
+            font-size: 1.2em;
+            color: #63b3ed;
+        }
+
+        .event-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* FAQ Section Styles */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .faq-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .faq-item h4 {
+            font-size: 1.1em;
+            color: #63b3ed;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        /* New and improved Contact Section Styles */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Stack elements vertically */
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-join-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .contact-join-card h3 {
+            font-size: 2em; /* Larger heading for impact */
+            color: #63b3ed;
+            margin-bottom: 10px;
+        }
+
+        .contact-join-card p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .contact-join-card input,
+        .contact-join-card textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .contact-join-card button {
+            width: 100%;
+            background-color: #63b3ed;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-join-card button:hover {
+            background-color: #4c96c4;
+            transform: translateY(-2px);
+        }
+
+        .join-button {
+            display: inline-block;
+            background-color: #4c96c4;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .join-button:hover {
+            background-color: #63b3ed;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ccc;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logos Section -->
+    <div class="logo-container">
+        <div class="club-logo-group">
+            <img src="https://agentblazer-club-au.github.io/launch/Agentblazer-logo.png" alt="Agentblazer Club Logo" class="club-logo">
+            <span class="club-text">club</span>
+        </div>
+        <img src="https://agentblazer-club-au.github.io/launch/anurag-logo-2.png" alt="College Logo" class="college-logo">
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="container">
+            <h1 class="section-title">Welcome to the Agentblazer Club</h1>
+            <h3 style="text-align: center;">Igniting minds, fostering innovation, and building the future of technology.</h3>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p>The Agentblazer Club is a dynamic community of passionate students dedicated to exploring and mastering the latest advancements in artificial intelligence, robotics, and automation. Our mission is to provide a collaborative platform for learning, creating, and sharing groundbreaking projects.</p>
+            <p>Through workshops, hackathons, and guest lectures, we aim to bridge the gap between theoretical knowledge and practical application, empowering our members to become true innovators. We believe in the power of hands-on experience and a supportive environment to help every member reach their full potential.</p>
+        </div>
+    </section>
+    
+    <!-- Mission & Vision Section -->
+    <section id="mission-vision" class="section">
+        <div class="container">
+            <h2 class="section-title">Mission & Vision</h2>
+            <div class="outcomes-container">
+                <div class="outcome-box">
+                    <h3>Innovation 💡</h3>
+                    <p>We empower students to create groundbreaking projects in AI and automation, fostering a culture of curiosity and forward-thinking.</p>
+                </div>
+                <div class="outcome-box">
+                    <h3>Community 🫂</h3>
+                    <p>We build a supportive and collaborative environment where ideas are shared, skills are honed, and friendships are forged.</p>
+                </div>
+                <div class="outcome-box">
+                    <h3>Empowerment ✨</h3>
+                    <p>We provide hands-on experience and practical knowledge to equip members with the confidence to become future tech leaders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section id="members" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-container">
+                <!-- President Card -->
+                <div class="member-card">
+                    <img src="https://placehold.co/120x120/4c96c4/ffffff?text=P" alt="President's photo" class="member-photo">
+                    <h3 class="member-name">Arjun Sharma</h3>
+                    <p class="member-title">President</p>
+                </div>
+                <!-- Vice-President Card -->
+                <div class="member-card">
+                    <img src="https://placehold.co/120x120/4c96c4/ffffff?text=VP" alt="Vice-President's photo" class="member-photo">
+                    <h3 class="member-name">Priya Verma</h3>
+                    <p class="member-title">Vice-President</p>
+                </div>
+                <!-- Faculty Coordinator Card -->
+                <div class="member-card">
+                    <img src="https://placehold.co/120x120/4c96c4/ffffff?text=FC" alt="Faculty Coordinator's photo" class="member-photo">
+                    <h3 class="member-name">Dr. Anjali Rao</h3>
+                    <p class="member-title">Faculty Coordinator</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-container">
+                <div class="event-card">
+                    <p class="event-date">September 15, 2025</p>
+                    <p class="event-title">Introduction to Machine Learning</p>
+                    <p class="event-description">A beginner-friendly session covering core concepts and hands-on practice with a basic ML model.</p>
+                </div>
+                <div class="event-card">
+                    <p class="event-date">October 5, 2025</p>
+                    <p class="event-title">AgentForce & Responsible AI</p>
+                    <p class="event-description">An in-depth workshop on building intelligent agents with a focus on ethical considerations and responsible development.</p>
+                </div>
+                <div class="event-card">
+                    <p class="event-date">November 20, 2025</p>
+                    <p class="event-title">AI Ethics and Bias Seminar</p>
+                    <p class="event-description">An interactive discussion on the societal impact of AI, focusing on fairness, accountability, and transparency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>How do I become a member?</h4>
+                    <p>To join, you can attend one of our upcoming events and talk to a club officer, or fill out the contact form on this page to express your interest. We welcome students from all academic backgrounds!</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I need prior experience in AI or robotics?</h4>
+                    <p>Not at all! Our club is designed for all skill levels. We offer workshops and resources for beginners to get started and for more experienced members to deepen their knowledge.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Are there any membership fees?</h4>
+                    <p>Membership is completely free! We believe in providing an open and accessible environment for everyone to learn and innovate.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What types of events do you host?</h4>
+                    <p>We host a variety of events, including hands-on workshops, competitive hackathons, guest lectures from industry professionals, and social meetups to foster our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-join-card">
+                    <h3>JOIN THE CLUB AND BE PART OF FUTURE AI</h3>
+                    <p>Have a question or a suggestion? We'd love to hear from you! Fill out the form below to connect with us or to get started on your journey with Agentblazer.</p>
+                    <a href="#" class="join-button">Join Our Community</a>
+                    <hr style="margin: 20px auto; width: 50%;">
+                    <form>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Agentblazer Club. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
