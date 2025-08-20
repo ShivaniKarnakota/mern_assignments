@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Natural Scene</title>
+  <style>
+    body {
+      margin: 0;
+      background: #b3e0ff;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Sun */
+    .sun {
+      width: 100px;
+      height: 100px;
+      background: orange;
+      border-radius: 50%;
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      box-shadow: 0 0 40px rgba(255, 165, 0, 0.7);
+      z-index: 1;
+    }
+
+    /* Rainbow */
+    .rainbow {
+      position: absolute;
+      bottom: 50px;
+      right: -300px;
+      width: 1200px;
+      height: 600px;
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .arc {
+      position: absolute;
+      border-radius: 50%;
+      border: 15px solid transparent;
+      opacity: 0.4;
+    }
+
+    .arc1 { border-top-color: red;    top: 0;    left: 0;    width: 1200px; height: 600px; }
+    .arc2 { border-top-color: orange; top: 15px; left: 15px; width: 1170px; height: 570px; }
+    .arc3 { border-top-color: yellow; top: 30px; left: 30px; width: 1140px; height: 540px; }
+    .arc4 { border-top-color: green;  top: 45px; left: 45px; width: 1110px; height: 510px; }
+    .arc5 { border-top-color: blue;   top: 60px; left: 60px; width: 1080px; height: 480px; }
+    .arc6 { border-top-color: indigo; top: 75px; left: 75px; width: 1050px; height: 450px; }
+    .arc7 { border-top-color: violet; top: 90px; left: 90px; width: 1020px; height: 420px; }
+
+    /* House */
+    .house {
+      position: absolute;
+      bottom: 100px;
+      left: 100px;
+      width: 200px;
+      height: 150px;
+      background: #f4a261;
+      border: 3px solid #555;
+      z-index: 2;
+    }
+
+    .roof {
+      width: 0;
+      height: 0;
+      border-left: 110px solid transparent;
+      border-right: 110px solid transparent;
+      border-bottom: 70px solid #e76f51;
+      position: absolute;
+      top: -70px;
+      left: -10px;
+    }
+
+    .door {
+      width: 50px;
+      height: 80px;
+      background: #8d5524;
+      border: 2px solid #333;
+      position: absolute;
+      bottom: 10px;
+      left: 75px;
+    }
+
+    /* Grass */
+    .grass {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: #2ecc71;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sun"></div>
+
+  <div class="rainbow">
+    <div class="arc arc1"></div>
+    <div class="arc arc2"></div>
+    <div class="arc arc3"></div>
+    <div class="arc arc4"></div>
+    <div class="arc arc5"></div>
+    <div class="arc arc6"></div>
+    <div class="arc arc7"></div>
+  </div>
+
+  <div class="house">
+    <div class="roof"></div>
+    <div class="door"></div>
+  </div>
+
+  <div class="grass"></div>
+
+</body>
+</html>
